@@ -9,7 +9,7 @@ html {
     scroll-behavior: smooth;
 }
 
-p{
+p {
     font-size: 18px;
 }
 
@@ -254,25 +254,25 @@ nav ul li a:hover::after {
 }
 
 /* certifications */
-#certifications{
+#certifications {
     padding: 0px 0 50px;
     color: #ababab;
 }
 
 
 /* achievements */
-#achievements{
+#achievements {
     padding: 0px 0 50px;
     color: #ababab;
 }
 
-.list{
+.list {
     padding-top: 10px;
 }
 
 /* -----------contact------ */
 
-#contact{
+#contact {
     color: #ababab;
 }
 
