@@ -26,6 +26,14 @@ body {
     background-size: cover;
 }
 
+.header-text h1 {
+    font-size: 65px;
+}
+
+.header-text h5 {
+    font-size: 27px;
+}
+
 .container {
     padding: 10px 10%;
 }
@@ -341,11 +349,21 @@ form .btn2 {
     cursor: pointer;
 }
 
+.mail {
+    color: #ababab;
+    text-decoration: none;
+}
+
 /* ------------ css for small screen ------- */
 
 nav .fas {
     display: none;
 }
+
+nav.hide ul {
+    right: -300px;
+}
+
 
 @media only screen and (max-width: 600px) {
     #header {
@@ -423,7 +441,3 @@ nav .fas {
     margin-top: -40px;
     display: block;
 }
-
-/* .fas.fa-bars{
-    cursor: pointer;
-} */

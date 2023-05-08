@@ -8,10 +8,7 @@
     <title>Spandana Dara</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <meta
-      name="description"
-      content="Spandana Dara is a Software Engineer."
-    />
+    <meta name="description" content="Spandana Dara is a Software Engineer." />
 </head>
 
 <body>
@@ -45,7 +42,7 @@
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p>
-                        A skilled and driven web developer with a passion for technology and an insatiable desire to
+                        A skilled and driven software engineer with a passion for technology and an insatiable desire to
                         learn - that's me! With 2 years of experience under my belt and currently pursuing a master's in
                         computer science at Northeastern University, I am committed to developing innovative and
                         impactful web solutions. <br /> <br />
@@ -160,7 +157,7 @@
         </div>
     </div>
     <!-- Projets -->
-    <div id="projects">`
+    <div id="projects">
         <div class="container">
             <h1 class="sub-title">Projects</h1>
             <div class="work-list">
@@ -204,8 +201,8 @@
                 <h1 class="sub-title">Certifications</h1>
                 <div class="list">
                     <p>• Obtained ‘AWS Certified Cloud Practitioner’ certification, demonstrating proficiency in cloud
-                        concepts, AWS services, security, and &nbsp;&nbsp; architecture best practices.</p>
-                    <p>• Introduction to Machine Learning by NPTEL.</p>
+                        concepts, AWS services, security, and architecture best practices.</p><br>
+                    <p>• Introduction to Machine Learning by NPTEL.</p><br>
                     <p>• Certified in Python Programming by InfyTq.</p>
                 </div>
             </div>
@@ -218,13 +215,13 @@
                 <h1 class="sub-title">Achievements and Involvements</h1>
                 <div class="list">
                     <p>• Spearheaded a team to publish a research paper titled "Facial Emotion Recognition using
-                        Convolutional Neural Networks”.</p>
+                        Convolutional Neural Networks”.</p><br>
                     <p>• Bagged the coveted Deloitte "Applause Award" for exceptional contributions to critical
-                        projects.</p>
+                        projects.</p><br>
                     <p>• Volunteered as a member of the National Service Scheme (NSS), participating in community
-                        service projects and initiatives.</p>
+                        service projects and initiatives.</p><br>
                     <p>• Secured first position for presenting a paper on ‘Project Loon’ during technical fest at VNR
-                        VJIET.</p>
+                        VJIET.</p><br>
                     <p>• Took part in the esteemed 14th National Chess Championship for Women in India, demonstrating
                         great sportsmanship</p>
                 </div>
@@ -237,23 +234,28 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fas fa-paper-plane"></i>spandana1286@gmail.com</p>
+                    <!-- <p><i class="fa-solid fa-envelope"></i>spandana1286@gmail.com</p> -->
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:spandana1286@gmail.com" class="mail">spandana1286@gmail.com</a>
+                    </p>
                     <p><i class="fas fa-phone-square-alt"></i>8573963415</p>
                     <div class="social-icons">
-                        <a href="https://github.com/Spandana-dara" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.facebook.com/spandana1286?mibextid=ZbWKwL" target="_blank"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/spandanareddyyyy" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/spandana-reddy-b3449518a/" target="_blank"><i
                                 class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Spandana-dara" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/spandanareddyyyy" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/spandana1286?mibextid=ZbWKwL" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
                     </div>
                     <a href="images/Spandana_Resume_Blue.pdf" download class="btn btn2">Download Resume</a>
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your name" required>
-                        <input type="email" name="Email" placeholder="Your email" required>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                        <span id="email-error" style="display:none">Please enter a valid email address.</span>
                         <textarea name="Message" rows="6" placeholder="Your message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
@@ -289,7 +291,19 @@
     <script>
         var sidemenu = document.getElementById("sidemenu");
         function openmenu(tabname) {
+            sidemenu.style.display = 'block';
             sidemenu.style.right = "0";
+            const homeSection = document.querySelector('#header');
+            window.addEventListener('scroll', hideNav);
+            window.addEventListener('locationchange', hideNav);
+
+            function hideNav() {
+                if (window.scrollY > 0 || window.location.hash !== '') {
+                    sidemenu.style.display = 'none';
+                } else {
+                    sidemenu.style.display = 'block';
+                }
+            }
         }
         function closemenu(tabname) {
             sidemenu.style.right = "-200px";
@@ -312,6 +326,24 @@
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
+
+    <script>
+        const emailInput = document.querySelector('#email');
+        const emailError = document.querySelector('#email-error');
+
+        emailInput.addEventListener('input', function (event) {
+            if (!emailIsValid(event.target.value)) {
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+            }
+        });
+
+        function emailIsValid(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    </script>
+
 </body>
 
 </html>
