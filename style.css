@@ -228,8 +228,8 @@ nav ul li a:hover::after {
 
 .layer h2 {
     font-weight: 550;
-    margin-bottom: 42px;
-    margin-top: 70px;
+    margin-bottom: 15px;
+    margin-top: 48px;
 }
 
 .layer a {
@@ -276,6 +276,10 @@ nav ul li a:hover::after {
 
 .list {
     padding-top: 10px;
+}
+
+.list a{
+    color: #ff004f;
 }
 
 /* -----------contact------ */

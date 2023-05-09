@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spandana Dara</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -16,12 +15,12 @@
         <div class="container">
             <nav>
                 <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#achievements">Achievements and Involvements</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#header" onclick="closemenu()">Home</a></li>
+                    <li><a href="#about" onclick="closemenu()">About</a></li>
+                    <li><a href="#projects" onclick="closemenu()">Projects</a></li>
+                    <li><a href="#certifications" onclick="closemenu()">Certifications</a></li>
+                    <li><a href="#achievements" onclick="closemenu()">Achievements and Involvements</a></li>
+                    <li><a href="#contact" onclick="closemenu()">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
@@ -43,11 +42,11 @@
                     <h1 class="sub-title">About Me</h1>
                     <p>
                         A skilled and driven software engineer with a passion for technology and an insatiable desire to
-                        learn - that's me! With 2 years of experience under my belt and currently pursuing a master's in
-                        computer science at Northeastern University, I am committed to developing innovative and
-                        impactful web solutions. <br /> <br />
+                        learn - that's me! With 2 years of experience under my belt and currently pursuing Master's in
+                        Computer Science at Northeastern University, I'm committed to developing innovative and
+                        impactful software solutions. <br /> <br />
                         My strong work ethic and dedication to excellence have helped me to excel in my field, and I
-                        take pride in delivering top-quality work.My love for technology is palpable, and I'm always
+                        take pride in delivering top-quality work. My love for technology is palpable, and I'm always
                         exploring new tools and techniques to stay ahead of the curve.
                     </p>
                     <div class="tab-titles">
@@ -156,7 +155,7 @@
             </div>
         </div>
     </div>
-    <!-- Projets -->
+    <!-- Projects -->
     <div id="projects">
         <div class="container">
             <h1 class="sub-title">Projects</h1>
@@ -200,10 +199,10 @@
             <div class="row>">
                 <h1 class="sub-title">Certifications</h1>
                 <div class="list">
-                    <p>• Obtained ‘AWS Certified Cloud Practitioner’ certification, demonstrating proficiency in cloud
+                    <p>• Obtained <a href="images/AWSCertificate.pdf" target="_blank"> AWS Certified Cloud Practitioner certification</a> demonstrating proficiency in cloud
                         concepts, AWS services, security, and architecture best practices.</p><br>
                     <p>• Introduction to Machine Learning by NPTEL.</p><br>
-                    <p>• Certified in Python Programming by InfyTq.</p>
+                    <p>• Certified in Python Programming by InfyTQ.</p>
                 </div>
             </div>
         </div>
@@ -292,12 +291,11 @@
         function openmenu(tabname) {
             sidemenu.style.display = 'block';
             sidemenu.style.right = "0";
-            const homeSection = document.querySelector('#header');
-            window.addEventListener('scroll', hideNav);
+            document.body.style.overflow = 'hidden';
             window.addEventListener('locationchange', hideNav);
 
             function hideNav() {
-                if (window.scrollY > 0 || window.location.hash !== '') {
+                if (window.location.hash !== '') {
                     sidemenu.style.display = 'none';
                 } else {
                     sidemenu.style.display = 'block';
@@ -306,6 +304,7 @@
         }
         function closemenu(tabname) {
             sidemenu.style.right = "-200px";
+            document.body.style.overflow = 'auto';
         }
     </script>
 
