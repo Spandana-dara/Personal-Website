@@ -218,13 +218,6 @@ nav ul li a:hover::after {
     transition: height 0.5s;
 }
 
-/* .work:hover img {
-    transform: scale(1.1);
-}
-
-.work:hover .layer {
-    height: 100%;
-} */
 
 .layer h2 {
     font-weight: 550;
@@ -278,7 +271,7 @@ nav ul li a:hover::after {
     padding-top: 10px;
 }
 
-.list a{
+.list a {
     color: #ff004f;
 }
 
