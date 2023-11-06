@@ -50,7 +50,7 @@ function About() {
         <Row>
           <Col>
             <Card className="project-card-view">
-              {/* <Card.Img variant="top" src={props.imgPath} alt="card-img" /> */}
+            
               <Card.Body>
                 <Card.Title>
                   <h4 className="purple fw-bold">Deloitte, India </h4>
@@ -83,14 +83,14 @@ function About() {
                 {"\n"}
                 {"\n"}
 
-                {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+                
               </Card.Body>
             </Card>
           </Col>
           
           <Col>
             <Card className="project-card-view">
-              {/* <Card.Img variant="top" src={props.imgPath} alt="card-img" /> */}
+              
               <Card.Body>
                 <Card.Title>
                   <h4 className="purple fw-bold">
@@ -116,7 +116,7 @@ function About() {
                 {"\n"}
                 {"\n"}
 
-                {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+      
               </Card.Body>
             </Card>
           </Col>
